@@ -16,6 +16,12 @@ SML '97 をサポートするコンパイラならどれでも動作するはず
 * MLton
 * SMLtoJs
 
+### Status
+
+- [x] [Data.Functor](http://hackage.haskell.org/package/base-4.7.0.1/docs/Data-Functor.html)
+- [x] [Control.Applicative](http://hackage.haskell.org/package/base-4.7.0.1/docs/Control-Applicative.html)
+- [x] [Control.Monad](http://hackage.haskell.org/package/base-4.7.0.1/docs/Control-Monad.html)
+
 ### Try
 
 cm, mlb を書いてあるので、 SML/NJ や MLton なら簡単に試すことができます。
