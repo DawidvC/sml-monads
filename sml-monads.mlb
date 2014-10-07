@@ -1,0 +1,15 @@
+local
+  $(SML_LIB)/basis/basis.mlb
+in
+  functor.sig
+  functor.sml
+  applicative.sig
+  applicative.sml
+  alternative.sig
+  alternative.sml
+  monad.sig
+  monad.sml
+  monad-plus.sig
+  monad-plus.sml
+  sml-monads-option.sml
+end

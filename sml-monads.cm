@@ -1,0 +1,30 @@
+Library
+  signature FUNCTOR_MIN
+  signature FUNCTOR
+  signature APPLICATIVE_MIN
+  signature APPLICATIVE
+  signature ALTERNATIVE_MIN
+  signature ALTERNATIVE
+  signature MONAD_MIN
+  signature MONAD
+  signature MONAD_PLUS_MIN
+  signature MONAD_PLUS
+  functor Functor
+  functor Applicative
+  functor Alternative
+  functor Monad
+  functor MonadPlus
+  structure SMLMonadsOption
+is
+  $/basis.cm
+  functor.sig
+  functor.sml
+  applicative.sig
+  applicative.sml
+  alternative.sig
+  alternative.sml
+  monad.sig
+  monad.sml
+  monad-plus.sig
+  monad-plus.sml
+  sml-monads-option.sml
