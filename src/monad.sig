@@ -22,13 +22,13 @@ signature MONAD = sig
   val <=< : ('b -> 'c t) * ('a -> 'b t) -> 'a -> 'c t
   val join : 'a t t -> 'a t
   val filterM : ('a -> bool t) * 'a list -> 'a list t
-  (*val mapAndUnzipM : ('a -> ('b * 'c) t) * 'a list -> ('b list * 'c list) t
+  val mapAndUnzipM : ('a -> ('b * 'c) t) * 'a list -> ('b list * 'c list) t
   val zipWithM : ('a * 'b -> 'c t) * 'a list * 'b list -> 'c list t
   val zipWithM_ : ('a * 'b -> 'c t) * 'a list * 'b list -> unit t
   val foldM : ('a * 'b -> 'a t) * 'a * 'b list -> 'a t
   val foldM_ : ('a * 'b -> 'a t) * 'a * 'b list -> unit t
   val replicateM : int * 'a t -> 'a list t
-  val replicateM_ : int * 'a t -> unit t*)
+  val replicateM_ : int * 'a t -> unit t
   val when : bool * unit t -> unit t
   val unless : bool * unit t -> unit t
   val liftM : ('a -> 'b) -> 'a t -> 'b t

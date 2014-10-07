@@ -31,6 +31,20 @@ functor Monad(MonadMin : MONAD_MIN) : MONAD = struct
 
   fun join m = m >>= (fn x => x)
 
+  fun mapAndUnzipM (f, xs) = sequence (List.map f xs) >>= (return o ListPair.unzip)
+
+  fun zipWithM (f, xs, ys) = sequence (ListPair.map f (xs, ys))
+
+  fun zipWithM_ (f, xs, ys) = sequence_ (ListPair.map f (xs, ys))
+
+  fun foldM (f, x, []) = return x
+    | foldM (f, x, (y::ys)) = f(x,y) >>= (fn x => foldM(f, x, ys))
+
+  fun foldM_ (f, x, ys) = foldM(f, x, ys) >> return ()
+
+  fun replicateM (n, m) = sequence (List.tabulate (n, fn _ => m))
+  fun replicateM_ (n, m) = sequence_ (List.tabulate (n, fn _ => m))
+
   fun when (p, m) = if p then m else return ()
   fun unless (p, m) = if p then return () else m
 
