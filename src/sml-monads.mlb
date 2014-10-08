@@ -15,4 +15,6 @@ in
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml
+  lens.sig
+  lens.sml
 end

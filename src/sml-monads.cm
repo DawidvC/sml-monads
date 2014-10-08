@@ -11,17 +11,23 @@ Library
   signature MONAD
   signature MONAD_PLUS_MIN
   signature MONAD_PLUS
+  signature GETTING
+  signature SETTING
   functor Functor
   functor Functor2
   functor Applicative
   functor Alternative
   functor Monad
   functor MonadPlus
+  functor Lens
+  functor Lens2
   structure SMLMonadsPrimIO
   structure SMLMonadsIO
   structure SMLMonadsIdentity
   structure SMLMonadsConst
   structure SMLMonadsOption
+  structure Getting
+  structure Setting
 is
   $/basis.cm
   functor.sig
@@ -38,3 +44,5 @@ is
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml
+  lens.sig
+  lens.sml
