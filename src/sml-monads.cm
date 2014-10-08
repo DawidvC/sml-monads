@@ -38,6 +38,8 @@ Library
   structure SMLMonadsIdentity
   structure SMLMonadsConst
   structure SMLMonadsOption
+  functor SMLMonadsStateT
+  structure SMLMonadsState
   structure Getting
   structure Setting
 is
@@ -58,5 +60,6 @@ is
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml
+  sml-monads-state.sml
   lens.sig
   lens.sml
