@@ -1,4 +1,5 @@
-functor MonadPlus(MonadPlusMin : MONAD_PLUS_MIN) : MONAD_PLUS = struct
+functor MonadPlus(MonadPlusMin : MONAD_PLUS_MIN)
+        :> MONAD_PLUS where type 'a t = 'a MonadPlusMin.t = struct
   open MonadPlusMin
 
   structure Functor = Monad.Functor

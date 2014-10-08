@@ -16,6 +16,7 @@ Library
   functor MonadPlus
   structure SMLMonadsPrimIO
   structure SMLMonadsIO
+  structure SMLMonadsIdentity
   structure SMLMonadsOption
 is
   $/basis.cm
@@ -30,4 +31,5 @@ is
   monad-plus.sig
   monad-plus.sml
   sml-monads-io.sml
+  sml-monads-identity.sml
   sml-monads-option.sml

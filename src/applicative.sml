@@ -1,4 +1,5 @@
-functor Applicative(ApplicativeMin : APPLICATIVE_MIN) : APPLICATIVE = struct
+functor Applicative(ApplicativeMin : APPLICATIVE_MIN)
+        :> APPLICATIVE where type 'a t = 'a ApplicativeMin.t = struct
   open ApplicativeMin
 
   infix 4 <$> <*>

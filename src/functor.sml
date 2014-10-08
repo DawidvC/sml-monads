@@ -1,4 +1,5 @@
-functor Functor(FunctorMin : FUNCTOR_MIN) : FUNCTOR = struct
+functor Functor(FunctorMin : FUNCTOR_MIN)
+        :> FUNCTOR where type 'a t = 'a FunctorMin.t = struct
   open FunctorMin
 
   val <$> = fmap

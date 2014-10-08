@@ -1,4 +1,5 @@
-functor Alternative(AlternativeMin : ALTERNATIVE_MIN) : ALTERNATIVE = struct
+functor Alternative(AlternativeMin : ALTERNATIVE_MIN)
+        :> ALTERNATIVE where type 'a t = 'a AlternativeMin.t = struct
   open AlternativeMin
   open Applicative
   open Functor

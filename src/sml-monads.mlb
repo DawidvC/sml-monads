@@ -12,5 +12,6 @@ in
   monad-plus.sig
   monad-plus.sml
   sml-monads-io.sml
+  sml-monads-identity.sml
   sml-monads-option.sml
 end

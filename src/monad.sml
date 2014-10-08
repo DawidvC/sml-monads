@@ -1,4 +1,5 @@
-functor Monad(MonadMin : MONAD_MIN) : MONAD = struct
+functor Monad(MonadMin : MONAD_MIN)
+        :> MONAD where type 'a t = 'a MonadMin.t = struct
   open MonadMin
 
   infix 1 >>= >>
