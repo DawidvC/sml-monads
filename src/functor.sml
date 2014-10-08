@@ -29,3 +29,15 @@ functor Functor(FunctorMin : FUNCTOR_MIN)
   open Functor3
   open FunctorMin
 end
+
+functor Functor3ToFunctor2(Functor3 : FUNCTOR3)
+        :> FUNCTOR2 where type ('z, 'a) t = (Bottom.t, 'z, 'a) Functor3.t = struct
+  open Functor3
+  type ('z, 'a) t = (Bottom.t, 'z, 'a) t
+end
+
+functor Functor3ToFunctor(Functor3 : FUNCTOR3)
+        :> FUNCTOR where type 'a t = (Bottom.t, Bottom.t, 'a) Functor3.t = struct
+  open Functor3
+  type 'a t = (Bottom.t, Bottom.t, 'a) t
+end
