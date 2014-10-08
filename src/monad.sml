@@ -1,6 +1,6 @@
-functor Monad(MonadMin : MONAD_MIN)
-        :> MONAD where type 'a t = 'a MonadMin.t = struct
-  open MonadMin
+functor Monad3(Monad3Min : MONAD3_MIN)
+        :> MONAD3 where type ('y, 'z, 'a) t = ('y, 'z, 'a) Monad3Min.t = struct
+  open Monad3Min
 
   infix 1 >>= >>
 
@@ -70,10 +70,40 @@ functor Monad(MonadMin : MONAD_MIN)
                                       return (f(x1, x2, x3, x4, x5)))))))
   fun ap x = liftM2 (fn (f, x) => f x) x
 
-  structure Applicative = Applicative(struct
-                                       type 'a t = 'a t
+  structure Applicative3 = Applicative3(struct
+                                       type ('y, 'z, 'a) t = ('y, 'z, 'a) t
                                        val pure = return
                                        val <*> = ap
                                        end)
-  structure Functor = Applicative.Functor
+  structure Functor3 = Applicative3.Functor3
+end
+
+functor Monad2(Monad2Min : MONAD2_MIN)
+        :> MONAD2 where type ('z, 'a) t = ('z, 'a) Monad2Min.t = struct
+  structure Monad3 = Monad3(struct
+                             type ('y, 'z, 'a) t
+                                  = ('z, 'a) Monad2Min.t
+                             val return = Monad2Min.return
+                             val >>= = Monad2Min.>>=
+                             end)
+
+  open Monad3
+  open Monad2Min
+  structure Applicative2 = Applicative3ToApplicative2(Applicative3)
+  structure Functor2 = Functor3ToFunctor2(Functor3)
+end
+
+functor Monad(MonadMin : MONAD_MIN)
+        :> MONAD where type 'a t = 'a MonadMin.t = struct
+  structure Monad3 = Monad3(struct
+                             type ('y, 'z, 'a) t
+                                  = 'a MonadMin.t
+                             val return = MonadMin.return
+                             val >>= = MonadMin.>>=
+                             end)
+
+  open Monad3
+  open MonadMin
+  structure Applicative = Applicative3ToApplicative(Applicative3)
+  structure Functor = Functor3ToFunctor(Functor3)
 end
