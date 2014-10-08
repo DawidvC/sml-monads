@@ -1,4 +1,5 @@
 Library
+  signature BOTTOM
   signature FUNCTOR_MIN
   signature FUNCTOR2_MIN
   signature FUNCTOR
@@ -21,6 +22,7 @@ Library
   functor MonadPlus
   functor Lens
   functor Lens2
+  structure Bottom
   structure SMLMonadsPrimIO
   structure SMLMonadsIO
   structure SMLMonadsIdentity
@@ -30,6 +32,8 @@ Library
   structure Setting
 is
   $/basis.cm
+  bottom.sig
+  bottom.sml
   functor.sig
   functor.sml
   applicative.sig

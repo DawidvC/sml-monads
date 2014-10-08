@@ -1,7 +1,3 @@
-structure Bottom :> sig type t end = struct
-  datatype t = Bottom
-end
-
 functor Lens2(Functor2 : FUNCTOR2) = struct
 type ('z, 'a, 'b, 'c, 'd) t = ('c -> ('z, 'd) Functor2.t)
                               -> 'a -> ('z, 'b) Functor2.t
