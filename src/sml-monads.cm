@@ -2,14 +2,24 @@ Library
   signature BOTTOM
   signature FUNCTOR_MIN
   signature FUNCTOR2_MIN
+  signature FUNCTOR3_MIN
   signature FUNCTOR
   signature FUNCTOR2
+  signature FUNCTOR3
   signature APPLICATIVE_MIN
+  signature APPLICATIVE2_MIN
+  signature APPLICATIVE3_MIN
   signature APPLICATIVE
+  signature APPLICATIVE2
+  signature APPLICATIVE3
   signature ALTERNATIVE_MIN
   signature ALTERNATIVE
   signature MONAD_MIN
+  signature MONAD2_MIN
+  signature MONAD3_MIN
   signature MONAD
+  signature MONAD2
+  signature MONAD3
   signature MONAD_PLUS_MIN
   signature MONAD_PLUS
   signature GETTING
