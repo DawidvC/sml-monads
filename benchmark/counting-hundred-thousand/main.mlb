@@ -1,0 +1,7 @@
+local
+  $(SML_LIB)/basis/basis.mlb
+in
+  ../../src/sml-monads.mlb
+  main.sml
+  main1.sml
+end
