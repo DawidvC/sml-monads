@@ -1,0 +1,6 @@
+local
+  $(SML_LIB)/basis/basis.mlb
+  ../../src/sml-monads.mlb
+in
+  tick.sml
+end
