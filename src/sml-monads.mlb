@@ -13,6 +13,8 @@ in
   monad.sml
   monad-plus.sig
   monad-plus.sml
+  monad-state.sig
+  monad-state.sml
   sml-monads-io.sml
   sml-monads-identity.sml
   sml-monads-const.sml
