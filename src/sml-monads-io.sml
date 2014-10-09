@@ -1,11 +1,11 @@
-structure SMLMonadsPrimIO :> sig
-                               type 'a IO
-                               val make : (unit -> 'a) -> 'a IO
-                               val unsafePerformIO : 'a IO -> 'a
+structure SMLMonadsPrimIO : sig
+                               type ('r, 'a) IO
+                               val make : (unit -> 'a) -> ('r, 'a) IO
+                               val unsafePerformIO : ('a, 'a) IO -> 'a
                              end = struct
-                               type 'a IO = unit -> 'a
-                               fun make f = f
-                               fun unsafePerformIO f = f ()
+                               type ('r, 'a) IO = ('a -> 'r) -> 'r
+                               fun make f cont = cont(f())
+                               fun unsafePerformIO f = f (fn x => x)
                              end
 
 structure SMLMonadsIO = struct
@@ -21,17 +21,14 @@ fun lift5 f (x1, x2, x3, x4, x5) = make (fn () => f (x1, x2, x3, x4, x5))
 fun putStr x = lift1 print x
 fun putStrLn x = lift1 print (x ^ "\n")
 
-local structure IOMonad = Monad(struct
-                                 type 'a t = 'a IO
-                                 fun return x = make (fn () => x)
-                                 fun >>=(m, f) = make (fn () =>
-                                     let val x = unsafePerformIO m
-                                     in unsafePerformIO (f x)
-                                     end)
+local structure IOMonad = Monad2(struct
+                                 type ('r, 'a) t = ('r, 'a) IO
+                                 fun return x cont = cont x
+                                 fun >>=(m, f) cont = m (fn x => f x cont)
                                  end)
 in open IOMonad
-   open Applicative
-   open Functor
+   open Applicative2
+   open Functor2
 end
 
 end
