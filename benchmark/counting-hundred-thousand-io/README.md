@@ -8,9 +8,9 @@ IORef を使用して、単に10万回繰り返すだけのプログラムの
 ```
 $ ml-build main.cm Main.main
 $ time sml @SMLload main
-real	0m0.049s
-user	0m0.018s
-sys	0m0.008s
+real	0m0.045s
+user	0m0.020s
+sys	0m0.007s
 ```
 
 ### MLton
@@ -18,9 +18,9 @@ sys	0m0.008s
 ```
 $ mlton main.mlb
 $ time ./main 
-real	0m0.010s
-user	0m0.006s
-sys	0m0.004s
+real	0m0.006s
+user	0m0.003s
+sys	0m0.002s
 ```
 
 ### GHC
