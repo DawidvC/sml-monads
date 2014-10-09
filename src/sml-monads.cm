@@ -28,6 +28,7 @@ Library
   signature MONAD_STATE3
   signature GETTING
   signature SETTING
+  signature SML_MONADS_IOREF
   functor Functor
   functor Functor2
   functor Functor3
@@ -46,6 +47,7 @@ Library
   structure Bottom
   structure SMLMonadsPrimIO
   structure SMLMonadsIO
+  structure SMLMonadsIORef
   structure SMLMonadsIdentity
   structure SMLMonadsConst
   structure SMLMonadsOption
@@ -70,6 +72,8 @@ is
   monad-state.sig
   monad-state.sml
   sml-monads-io.sml
+  sml-monads-ioref.sig
+  sml-monads-ioref.sml
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml

@@ -16,6 +16,8 @@ in
   monad-state.sig
   monad-state.sml
   sml-monads-io.sml
+  sml-monads-ioref.sig
+  sml-monads-ioref.sml
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml
