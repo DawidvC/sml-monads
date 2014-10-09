@@ -23,7 +23,9 @@ Library
   signature MONAD_PLUS_MIN
   signature MONAD_PLUS
   signature MONAD_STATE_MIN
+  signature MONAD_STATE3_MIN
   signature MONAD_STATE
+  signature MONAD_STATE3
   signature GETTING
   signature SETTING
   functor Functor
@@ -38,6 +40,7 @@ Library
   functor Monad3
   functor MonadPlus
   functor MonadState
+  functor MonadState3
   functor Lens
   functor Lens2
   structure Bottom
