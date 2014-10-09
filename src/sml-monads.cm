@@ -28,9 +28,14 @@ Library
   signature SETTING
   functor Functor
   functor Functor2
+  functor Functor3
   functor Applicative
+  functor Applicative2
+  functor Applicative3
   functor Alternative
   functor Monad
+  functor Monad2
+  functor Monad3
   functor MonadPlus
   functor MonadState
   functor Lens
