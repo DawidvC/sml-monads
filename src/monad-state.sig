@@ -13,3 +13,19 @@ signature MONAD_STATE = sig
   val modify : ('s -> 's) -> ('s, unit) t
   val gets : ('s -> 'a) -> ('s, 'a) t
 end
+
+signature MONAD_STATE3_MIN = sig
+  type ('z, 's, 'a) t
+  structure Monad3 : MONAD3 where type ('z, 's, 'a) t = ('z, 's, 'a) t
+  val get : ('z, 's, 's) t
+  val put : 's -> ('z, 's, unit) t
+end
+
+signature MONAD_STATE3 = sig
+  type ('z, 's, 'a) t
+  structure Monad3 : MONAD3 where type ('z, 's, 'a) t = ('z, 's, 'a) t
+  val get : ('z, 's, 's) t
+  val put : 's -> ('z, 's, unit) t
+  val modify : ('s -> 's) -> ('z, 's, unit) t
+  val gets : ('s -> 'a) -> ('z, 's, 'a) t
+end
