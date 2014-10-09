@@ -41,3 +41,15 @@ functor Functor3ToFunctor(Functor3 : FUNCTOR3)
   open Functor3
   type 'a t = (Bottom.t, Bottom.t, 'a) t
 end
+
+functor FunctorToFunctor2(Functor : FUNCTOR)
+        :> FUNCTOR2 where type ('z, 'a) t = 'a Functor.t = struct
+  open Functor
+  type ('z, 'a) t = 'a Functor.t
+end
+
+functor FunctorToFunctor3(Functor : FUNCTOR)
+        :> FUNCTOR3 where type ('y, 'z, 'a) t = 'a Functor.t = struct
+  open Functor
+  type ('y, 'z, 'a) t = 'a Functor.t
+end
