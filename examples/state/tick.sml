@@ -4,7 +4,7 @@ open SMLMonadsState
 
 infix 1 >> >>=
 
-val tick = get >>= (fn n => put(n+1) >> return n)
+fun tick eta = (get >>= (fn n => put(n+1) >> return n)) eta
 fun plusOne n = exec tick n
 fun plus n x = exec (replicateM(n, tick)) x
 
