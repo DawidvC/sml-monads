@@ -1,16 +1,8 @@
-structure SMLMonadsPrimIO : sig
-                               type ('r, 'a) t
-                               val make : (unit -> 'a) -> ('r, 'a) t
-                               val unsafePerformIO : ('a, 'a) t -> 'a
-                             end = struct
-                               type ('r, 'a) t = ('a -> 'r) -> 'r
-                               fun make f cont = cont(f())
-                               fun unsafePerformIO f = f (fn x => x)
-                             end
+structure SMLMonadsIO :> SML_MONADS_IO = struct
 
-structure SMLMonadsIO = struct
-
-open SMLMonadsPrimIO
+type ('r, 'a) t = ('a -> 'r) -> 'r
+fun make f cont = cont(f())
+fun unsafePerformIO f = f (fn x => x)
 
 fun lift1 f x1 = make (fn () => f x1)
 fun lift2 f (x1, x2) = make (fn () => f (x1, x2))

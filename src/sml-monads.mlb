@@ -15,6 +15,7 @@ in
   monad-plus.sml
   monad-state.sig
   monad-state.sml
+  sml-monads-io.sig
   sml-monads-io.sml
   sml-monads-ioref.sig
   sml-monads-ioref.sml
