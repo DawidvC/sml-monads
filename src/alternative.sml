@@ -1,8 +1,13 @@
 functor Alternative(AlternativeMin : ALTERNATIVE_MIN)
         :> ALTERNATIVE where type 'a t = 'a AlternativeMin.t = struct
   open AlternativeMin
+
+  structure Applicative = Applicative(struct
+                                       type 'a t = 'a t
+                                       val pure = pure
+                                       val <*> = <*>
+                                     end)
   open Applicative
-  open Functor
 
   infix 4 <$> <*>
   infix 3 <|>

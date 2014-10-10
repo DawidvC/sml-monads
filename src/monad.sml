@@ -75,7 +75,7 @@ functor Monad3(Monad3Min : MONAD3_MIN)
                                        val pure = return
                                        val <*> = ap
                                        end)
-  structure Functor3 = Applicative3.Functor3
+  open Applicative3
 end
 
 functor Monad2(Monad2Min : MONAD2_MIN)
@@ -89,8 +89,6 @@ functor Monad2(Monad2Min : MONAD2_MIN)
 
   open Monad3
   open Monad2Min
-  structure Applicative2 = Applicative3ToApplicative2(Applicative3)
-  structure Functor2 = Functor3ToFunctor2(Functor3)
 end
 
 functor Monad(MonadMin : MONAD_MIN)
@@ -104,6 +102,4 @@ functor Monad(MonadMin : MONAD_MIN)
 
   open Monad3
   open MonadMin
-  structure Applicative = Applicative3ToApplicative(Applicative3)
-  structure Functor = Functor3ToFunctor(Functor3)
 end

@@ -5,9 +5,11 @@ functor Applicative3(Applicative3Min : APPLICATIVE3_MIN)
 
   infix 4 <$> <*>
 
+  fun fmap (f, x) = pure f <*> x
+
   structure Functor3Min = struct
     type ('y, 'z, 'a) t = ('y, 'z, 'a) t
-    fun fmap (f, x) = pure f <*> x
+    val fmap = fmap
   end
 
   structure Functor3 = Functor3(Functor3Min)
@@ -36,7 +38,6 @@ functor Applicative2(Applicative2Min : APPLICATIVE2_MIN)
 
   open Applicative3
   open Applicative2Min
-  structure Functor2 = Functor3ToFunctor2(Functor3)
 end
 
 functor Applicative(ApplicativeMin : APPLICATIVE_MIN)
@@ -51,19 +52,16 @@ functor Applicative(ApplicativeMin : APPLICATIVE_MIN)
 
   open Applicative3
   open ApplicativeMin
-  structure Functor = Functor3ToFunctor(Functor3)
 end
 
 functor Applicative3ToApplicative2(Applicative3 : APPLICATIVE3)
         :> APPLICATIVE2 where type ('z, 'a) t = (Bottom.t, 'z, 'a) Applicative3.t = struct
   open Applicative3
   type ('z, 'a) t = (Bottom.t, 'z, 'a) t
-  structure Functor2 = Functor3ToFunctor2(Functor3)
 end
 
 functor Applicative3ToApplicative(Applicative3 : APPLICATIVE3)
         :> APPLICATIVE where type 'a t = (Bottom.t, Bottom.t, 'a) Applicative3.t = struct
   open Applicative3
   type 'a t = (Bottom.t, Bottom.t, 'a) t
-  structure Functor = Functor3ToFunctor(Functor3)
 end

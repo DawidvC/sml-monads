@@ -27,8 +27,6 @@ local structure IOMonad = Monad2(struct
                                  fun >>=(m, f) cont = m (fn x => f x cont)
                                  end)
 in open IOMonad
-   open Applicative2
-   open Functor2
 end
 
 end

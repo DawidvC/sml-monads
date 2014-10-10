@@ -12,7 +12,5 @@ structure SMLMonadsIdentity = struct
                                 end)
   in
     open Monad
-    open Applicative
-    open Functor
   end
 end

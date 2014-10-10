@@ -2,13 +2,9 @@ structure SMLMonadsOption =
 
 let structure Origin = struct
       type 'a t = 'a option
-      structure Monad = Monad
-                            (struct
-                              type 'a t = 'a t
-                              fun return x = SOME x
-                              fun >>=(SOME x, f) = f x
-                                | >>= _ = NONE
-                              end)
+      fun return x = SOME x
+      fun >>=(SOME x, f) = f x
+        | >>= _ = NONE
       val mzero = NONE
       fun mplus(NONE, x) = x
         | mplus(x, _) = x
@@ -17,9 +13,5 @@ let structure Origin = struct
     structure MonadPlus = MonadPlus(Origin)
 in struct
       open MonadPlus
-      open Monad
-      open Alternative
-      open Applicative
-      open Functor
     end
 end

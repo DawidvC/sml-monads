@@ -2,16 +2,21 @@ functor MonadPlus(MonadPlusMin : MONAD_PLUS_MIN)
         :> MONAD_PLUS where type 'a t = 'a MonadPlusMin.t = struct
   open MonadPlusMin
 
-  structure Functor = Monad.Functor
-  structure Applicative = Monad.Applicative
+  structure Monad = Monad(struct
+                           type 'a t = 'a t
+                           val return = return
+                           val >>= = >>=
+                         end)
+
+  open Monad
   structure Alternative = Alternative(struct
                                        type 'a t = 'a t
-                                       structure Applicative = Applicative
+                                       val pure = pure
+                                       val <*> = <*>
                                        val empty = mzero
                                        val <|> = mplus
                                        end)
-
-  open Monad
+  open Alternative
   infix 1 >>=
 
   fun guard true = return ()
