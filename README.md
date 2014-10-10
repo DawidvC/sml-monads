@@ -35,9 +35,6 @@ cm, mlb を書いてあるので、 SML/NJ や MLton なら簡単に試すこと
 $ sml src/sml-monads.cm
 Standard ML of New Jersey v110.76 [built: Tue Oct 22 14:04:11 2013]
 [scanning src/sml-monads.cm]
-[parsing src/(sml-monads.cm):functor.sig]
-[creating directory src/.cm/SKEL]
-[parsing src/(sml-monads.cm):functor.sml]
 [parsing src/(sml-monads.cm):applicative.sig]
 [parsing src/(sml-monads.cm):applicative.sml]
 [parsing src/(sml-monads.cm):alternative.sig]
@@ -46,124 +43,76 @@ Standard ML of New Jersey v110.76 [built: Tue Oct 22 14:04:11 2013]
 [parsing src/(sml-monads.cm):monad.sml]
 [parsing src/(sml-monads.cm):monad-plus.sig]
 [parsing src/(sml-monads.cm):monad-plus.sml]
+[parsing src/(sml-monads.cm):monad-state.sig]
+[parsing src/(sml-monads.cm):monad-state.sml]
+[parsing src/(sml-monads.cm):sml-monads-io.sig]
+[parsing src/(sml-monads.cm):sml-monads-io.sml]
+[parsing src/(sml-monads.cm):sml-monads-identity.sig]
+[parsing src/(sml-monads.cm):sml-monads-identity.sml]
+[parsing src/(sml-monads.cm):sml-monads-const.sig]
+[parsing src/(sml-monads.cm):sml-monads-const.sml]
+[parsing src/(sml-monads.cm):sml-monads-option.sig]
 [parsing src/(sml-monads.cm):sml-monads-option.sml]
+[parsing src/(sml-monads.cm):sml-monads-state.sig]
+[parsing src/(sml-monads.cm):sml-monads-state.sml]
+[parsing src/(sml-monads.cm):lens.sml]
+[library $SMLNJ-BASIS/basis.cm is stable]
 - open SMLMonadsOption;
 [autoloading]
 [autoloading done]
 opening SMLMonadsOption
-  structure Alternative :
-    sig
-      type 'a t = 'a t
-      structure Applicative : <sig>
-      val empty : 'a t
-      val <|> : 'a t * 'a t -> 'a t
-      val some : 'a t -> 'a list t
-      val many : 'a t -> 'a list t
-      val optional : 'a t -> 'a option t
-    end
-  structure Monad :
-    sig
-      type 'a t = 'a t
-      structure Functor : <sig>
-      structure Applicative : <sig>
-      val return : 'a -> 'a t
-      val >>= : 'a t * ('a -> 'b t) -> 'b t
-      val >> : 'a t * 'b t -> 'b t
-      val mapM : ('a -> 'b t) * 'a list -> 'b list t
-      val mapM_ : ('b -> 'a t) * 'b list -> unit t
-      val forM : 'a list * ('a -> 'b t) -> 'b list t
-      val forM_ : 'a list * ('a -> 'b t) -> unit t
-      val sequence : 'a t list -> 'a list t
-      val sequence_ : 'a t list -> unit t
-      val =<< : ('a -> 'b t) * 'a t -> 'b t
-      val >=> : ('b -> 'a t) * ('a -> 'c t) -> 'b -> 'c t
-      val <=< : ('a -> 'c t) * ('b -> 'a t) -> 'b -> 'c t
-      val join : 'a t t -> 'a t
-      val filterM : ('a -> bool t) * 'a list -> 'a list t
-      val when : bool * unit t -> unit t
-      val unless : bool * unit t -> unit t
-      val liftM : ('a -> 'b) -> 'a t -> 'b t
-      val liftM2 : ('a * 'b -> 'c) -> 'a t * 'b t -> 'c t
-      val liftM3 : ('a * 'b * 'c -> 'd) -> 'a t * 'b t * 'c t -> 'd t
-      val liftM4 : ('a * 'b * 'c * 'd -> 'e)
-                   -> 'a t * 'b t * 'c t * 'd t -> 'e t
-      val liftM5 : ('a * 'b * 'c * 'd * 'e -> 'f)
-                   -> 'a t * 'b t * 'c t * 'd t * 'e t -> 'f t
-      val ap : ('a -> 'b) t * 'a t -> 'b t
-    end
-  val mzero : 'a option
-  val mplus : 'a option * 'a option -> 'a option
-  val msum : 'a option list -> 'a option
-  val mfilter : ('a -> bool) * 'a option -> 'a option
-  val guard : bool -> unit option
-  val return : 'a -> 'a option
-  val >>= : 'a option * ('a -> 'b option) -> 'b option
-  val >> : 'a option * 'b option -> 'b option
-  val mapM : ('a -> 'b option) * 'a list -> 'b list option
-  val mapM_ : ('b -> 'a option) * 'b list -> unit option
-  val forM : 'a list * ('a -> 'b option) -> 'b list option
-  val forM_ : 'a list * ('a -> 'b option) -> unit option
-  val sequence : 'a option list -> 'a list option
-  val sequence_ : 'a option list -> unit option
-  val =<< : ('a -> 'b option) * 'a option -> 'b option
-  val >=> : ('b -> 'a option) * ('a -> 'c option) -> 'b -> 'c option
-  val <=< : ('a -> 'c option) * ('b -> 'a option) -> 'b -> 'c option
-  val join : 'a option option -> 'a option
-  val filterM : ('a -> bool option) * 'a list -> 'a list option
-  val when : bool * unit option -> unit option
-  val unless : bool * unit option -> unit option
-  val liftM : ('a -> 'b) -> 'a option -> 'b option
-  val liftM2 : ('a * 'b -> 'c) -> 'a option * 'b option -> 'c option
-  val liftM3 : ('a * 'b * 'c -> 'd)
-               -> 'a option * 'b option * 'c option -> 'd option
-  val liftM4 : ('a * 'b * 'c * 'd -> 'e)
-               -> 'a option * 'b option * 'c option * 'd option -> 'e option
-  val liftM5 : ('a * 'b * 'c * 'd * 'e -> 'f)
-               -> 'a option * 'b option * 'c option * 'd option * 'e option
-                  -> 'f option
-  val ap : ('a -> 'b) option * 'a option -> 'b option
-  structure Applicative :
-    sig
-      type 'a t = 'a t
-      structure Functor : <sig>
-      val pure : 'a -> 'a t
-      val <*> : ('a -> 'b) t * 'a t -> 'b t
-      val <**> : 'a t * ('a -> 'b) t -> 'b t
-      val *> : 'a t * 'b t -> 'b t
-      val <* : 'b t * 'a t -> 'b t
-      val liftA : ('a -> 'b) -> 'a t -> 'b t
-      val liftA2 : ('a * 'b -> 'c) -> 'a t * 'b t -> 'c t
-      val liftA3 : ('a * 'b * 'c -> 'd) -> 'a t * 'b t * 'c t -> 'd t
-    end
-  val empty : 'a option
-  val <|> : 'a option * 'a option -> 'a option
-  val some : 'a option -> 'a list option
-  val many : 'a option -> 'a list option
-  val optional : 'a option -> 'a option option
-  structure Functor :
-    sig
-      type 'a t = 'a t
-      val fmap : ('a -> 'b) * 'a t -> 'b t
-      val <$> : ('a -> 'b) * 'a t -> 'b t
-      val <$ : 'b * 'a t -> 'b t
-      val $> : 'a t * 'b -> 'b t
-      val void : 'a t -> unit t
-    end
-  val pure : 'a -> 'a option
-  val <*> : ('a -> 'b) option * 'a option -> 'b option
-  val <**> : 'a option * ('a -> 'b) option -> 'b option
-  val *> : 'a option * 'b option -> 'b option
-  val <* : 'b option * 'a option -> 'b option
-  val liftA : ('a -> 'b) -> 'a option -> 'b option
-  val liftA2 : ('a * 'b -> 'c) -> 'a option * 'b option -> 'c option
-  val liftA3 : ('a * 'b * 'c -> 'd)
-               -> 'a option * 'b option * 'c option -> 'd option
   type 'a t = 'a option
-  val fmap : ('a -> 'b) * 'a option -> 'b option
-  val <$> : ('a -> 'b) * 'a option -> 'b option
-  val <$ : 'b * 'a option -> 'b option
-  val $> : 'a option * 'b -> 'b option
-  val void : 'a option -> unit option
-- fmap (fn x => x + 1, SOME 42);
-val it = SOME 43 : int t
+  val fmap : ('a -> 'b) * 'a t -> 'b t
+  val <$> : ('a -> 'b) * 'a t -> 'b t
+  val <$ : 'b * 'a t -> 'b t
+  val $> : 'a t * 'b -> 'b t
+  val void : 'a t -> unit t
+  val pure : 'a -> 'a t
+  val <*> : ('a -> 'b) t * 'a t -> 'b t
+  val <**> : 'a t * ('a -> 'b) t -> 'b t
+  val *> : 'a t * 'b t -> 'b t
+  val <* : 'b t * 'a t -> 'b t
+  val liftA : ('a -> 'b) -> 'a t -> 'b t
+  val liftA2 : ('a * 'b -> 'c) -> 'a t * 'b t -> 'c t
+  val liftA3 : ('a * 'b * 'c -> 'd) -> 'a t * 'b t * 'c t -> 'd t
+  val empty : 'a t
+  val <|> : 'a t * 'a t -> 'a t
+  val some : 'a t -> 'a list t
+  val many : 'a t -> 'a list t
+  val optional : 'a t -> 'a option t
+  val return : 'a -> 'a t
+  val >>= : 'a t * ('a -> 'b t) -> 'b t
+  val >> : 'a t * 'b t -> 'b t
+  val mapM : ('a -> 'b t) * 'a list -> 'b list t
+  val mapM_ : ('b -> 'a t) * 'b list -> unit t
+  val forM : 'a list * ('a -> 'b t) -> 'b list t
+  val forM_ : 'a list * ('a -> 'b t) -> unit t
+  val sequence : 'a t list -> 'a list t
+  val sequence_ : 'a t list -> unit t
+  val =<< : ('a -> 'b t) * 'a t -> 'b t
+  val >=> : ('b -> 'a t) * ('a -> 'c t) -> 'b -> 'c t
+  val <=< : ('a -> 'c t) * ('b -> 'a t) -> 'b -> 'c t
+  val join : 'a t t -> 'a t
+  val filterM : ('a -> bool t) * 'a list -> 'a list t
+  val mapAndUnzipM : ('a -> ('b * 'c) t) * 'a list -> ('b list * 'c list) t
+  val zipWithM : ('a * 'b -> 'c t) * 'a list * 'b list -> 'c list t
+  val zipWithM_ : ('b * 'c -> 'a t) * 'b list * 'c list -> unit t
+  val foldM : ('b * 'a -> 'b t) * 'b * 'a list -> 'b t
+  val foldM_ : ('a * 'b -> 'a t) * 'a * 'b list -> unit t
+  val replicateM : int * 'a t -> 'a list t
+  val replicateM_ : int * 'a t -> unit t
+  val when : bool * unit t -> unit t
+  val unless : bool * unit t -> unit t
+  val liftM : ('a -> 'b) -> 'a t -> 'b t
+  val liftM2 : ('a * 'b -> 'c) -> 'a t * 'b t -> 'c t
+  val liftM3 : ('a * 'b * 'c -> 'd) -> 'a t * 'b t * 'c t -> 'd t
+  val liftM4 : ('a * 'b * 'c * 'd -> 'e) -> 'a t * 'b t * 'c t * 'd t -> 'e t
+  val liftM5 : ('a * 'b * 'c * 'd * 'e -> 'f)
+               -> 'a t * 'b t * 'c t * 'd t * 'e t -> 'f t
+  val ap : ('a -> 'b) t * 'a t -> 'b t
+  val mzero : 'a t
+  val mplus : 'a t * 'a t -> 'a t
+  val msum : 'a t list -> 'a t
+  val mfilter : ('a -> bool) * 'a t -> 'a t
+  val guard : bool -> unit t
 ```
