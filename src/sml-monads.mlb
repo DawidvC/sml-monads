@@ -18,7 +18,9 @@ in
   sml-monads-io.sml
   sml-monads-ioref.sig
   sml-monads-ioref.sml
+  sml-monads-identity.sig
   sml-monads-identity.sml
+  sml-monads-const.sig
   sml-monads-const.sml
   sml-monads-option.sml
   sml-monads-state.sml
