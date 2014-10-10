@@ -32,6 +32,7 @@ Library
   signature SML_MONADS_IDENTITY
   signature SML_MONADS_CONST
   signature SML_MONADS_OPTION
+  signature SML_MONADS_STATE_T
   signature SML_MONADS_STATE
   functor Functor
   functor Functor2
