@@ -1,4 +1,6 @@
-functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE = struct
+functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE_T
+                                              where type 'a M.t = 'a Monad.t
+= struct
   type ('r, 's, 'a) t
        = 's * ('a * 's -> 'r Monad.t) -> 'r Monad.t
   structure M = Monad
@@ -20,4 +22,11 @@ functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE = struct
   end
 end
 
-structure SMLMonadsState = SMLMonadsStateT(SMLMonadsIdentity)
+structure SMLMonadsState :> SML_MONADS_STATE =
+let structure T = SMLMonadsStateT(SMLMonadsIdentity)
+in struct
+  open T
+  fun run m s = SMLMonadsIdentity.run (T.run m s)
+  fun eval m s = SMLMonadsIdentity.run (T.eval m s)
+  fun exec m s = SMLMonadsIdentity.run (T.exec m s)
+end end
