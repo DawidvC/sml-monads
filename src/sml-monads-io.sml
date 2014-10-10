@@ -1,9 +1,9 @@
 structure SMLMonadsPrimIO : sig
-                               type ('r, 'a) IO
-                               val make : (unit -> 'a) -> ('r, 'a) IO
-                               val unsafePerformIO : ('a, 'a) IO -> 'a
+                               type ('r, 'a) t
+                               val make : (unit -> 'a) -> ('r, 'a) t
+                               val unsafePerformIO : ('a, 'a) t -> 'a
                              end = struct
-                               type ('r, 'a) IO = ('a -> 'r) -> 'r
+                               type ('r, 'a) t = ('a -> 'r) -> 'r
                                fun make f cont = cont(f())
                                fun unsafePerformIO f = f (fn x => x)
                              end
@@ -22,7 +22,7 @@ fun putStr x = lift1 print x
 fun putStrLn x = lift1 print (x ^ "\n")
 
 local structure IOMonad = Monad2(struct
-                                 type ('r, 'a) t = ('r, 'a) IO
+                                 type ('r, 'a) t = ('r, 'a) t
                                  fun return x cont = cont x
                                  fun >>=(m, f) cont = m (fn x => f x cont)
                                  end)
