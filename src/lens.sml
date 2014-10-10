@@ -31,5 +31,5 @@ structure Setting :> SETTING =
 let structure L = Lens(SMLMonadsIdentity) in
 struct
 open L
-fun set l d = let open SMLMonadsIdentity in run (l (fn _ => make d)) end
+fun set l d = let open SMLMonadsIdentity in run o l (fn _ => make d) end
 end end
