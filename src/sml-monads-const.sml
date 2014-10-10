@@ -1,4 +1,4 @@
-structure SMLMonadsConst = struct
+structure SMLMonadsConst :> SML_MONADS_CONST = struct
   type ('a, 'b) t = 'a
 
   fun make (x : 'a) : ('a, 'b) t = x
