@@ -29,6 +29,7 @@ Library
   signature GETTING
   signature SETTING
   signature SML_MONADS_IOREF
+  signature SML_MONADS_IDENTITY
   functor Functor
   functor Functor2
   functor Functor3
@@ -74,6 +75,7 @@ is
   sml-monads-io.sml
   sml-monads-ioref.sig
   sml-monads-ioref.sml
+  sml-monads-identity.sig
   sml-monads-identity.sml
   sml-monads-const.sml
   sml-monads-option.sml

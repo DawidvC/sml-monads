@@ -1,4 +1,4 @@
-structure SMLMonadsIdentity = struct
+structure SMLMonadsIdentity :> SML_MONADS_IDENTITY = struct
   type 'a t = 'a
 
   fun make (x : 'a) : 'a t = x
