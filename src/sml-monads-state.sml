@@ -1,9 +1,10 @@
-functor SMLMonadsStateT(Monad : MONAD) = struct
+functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE = struct
   type ('r, 's, 'a) t
        = 's * ('a * 's -> 'r Monad.t) -> 'r Monad.t
-  fun run m = m
-  fun eval m s = run m(s, fn (a, _) => Monad.return a)
-  fun exec m s = run m(s, fn (_, s') => Monad.return s')
+  structure M = Monad
+  fun run m s = m(s, fn x => Monad.return x)
+  fun eval m s = m(s, fn (a, s') => Monad.return a)
+  fun exec m s = m(s, fn (a, s') => Monad.return s')
 
   local structure MonadState = MonadState3
                                    (struct

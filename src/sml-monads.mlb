@@ -23,6 +23,7 @@ in
   sml-monads-const.sig
   sml-monads-const.sml
   sml-monads-option.sml
+  sml-monads-state.sig
   sml-monads-state.sml
   lens.sig
   lens.sml
