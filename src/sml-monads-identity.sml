@@ -1,8 +1,8 @@
 structure SMLMonadsIdentity :> SML_MONADS_IDENTITY = struct
   type 'a t = 'a
 
-  fun make (x : 'a) : 'a t = x
-  fun run (x : 'a t) : 'a = x
+  fun make x = x
+  fun run x = x
 
   local structure Monad = Monad
                               (struct

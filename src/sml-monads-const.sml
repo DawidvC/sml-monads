@@ -1,8 +1,8 @@
 structure SMLMonadsConst :> SML_MONADS_CONST = struct
   type ('a, 'b) t = 'a
 
-  fun make (x : 'a) : ('a, 'b) t = x
-  fun run (x : ('a, 'b) t) : 'a = x
+  fun make x = x
+  fun run x = x
 
   local structure Functor2 = Functor2
                                 (struct
