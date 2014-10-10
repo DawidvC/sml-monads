@@ -31,6 +31,7 @@ Library
   signature SML_MONADS_IOREF
   signature SML_MONADS_IDENTITY
   signature SML_MONADS_CONST
+  signature SML_MONADS_OPTION
   signature SML_MONADS_STATE
   functor Functor
   functor Functor2
@@ -81,6 +82,7 @@ is
   sml-monads-identity.sml
   sml-monads-const.sig
   sml-monads-const.sml
+  sml-monads-option.sig
   sml-monads-option.sml
   sml-monads-state.sig
   sml-monads-state.sml

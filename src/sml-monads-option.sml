@@ -1,4 +1,4 @@
-structure SMLMonadsOption :> MONAD_PLUS where type 'a t = 'a option =
+structure SMLMonadsOption :> SML_MONADS_OPTION where type 'a t = 'a option =
 
 let structure Origin = struct
       type 'a t = 'a option
