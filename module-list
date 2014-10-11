@@ -1,0 +1,2347 @@
+structure Bottom{
+ type t
+}
+structure SMLMonadsIO{
+ structure Monad3 => functor Monad2 . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD2_MIN
+ val make
+ val unsafePerformIO
+ val lift1
+ val lift2
+ val lift3
+ val lift4
+ val lift5
+ val putStr
+ val putStrLn
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+}
+structure SMLMonadsIORef{
+ structure IO{
+  structure Monad3 => functor Monad2 . structure Monad3
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => structure SMLMonadsIO
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  type t => signature MONAD2_MIN
+  val make
+  val unsafePerformIO
+  val lift1
+  val lift2
+  val lift3
+  val lift4
+  val lift5
+  val putStr
+  val putStrLn
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+  val return
+  val >>=
+ }
+ type t
+ val make
+ val read
+ val write
+ val modify
+}
+structure SMLMonadsIdentity{
+ structure Monad3 => functor Monad . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD_MIN
+ val make
+ val run
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+}
+structure SMLMonadsConst{
+ structure Functor3 => functor Functor2 . structure Functor3
+ type t
+ type t => signature FUNCTOR3_MIN
+ type t => signature FUNCTOR2_MIN
+ val make
+ val run
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val fmap
+}
+structure SMLMonadsOption{
+ structure Monad => functor MonadPlus . structure Monad
+ structure Monad3 => functor Monad . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ structure Alternative => functor MonadPlus . structure Alternative
+ structure Applicative => functor Alternative . structure Applicative
+ structure Applicative3 => functor Applicative . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD_PLUS_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD_MIN
+ type t => signature ALTERNATIVE_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature APPLICATIVE_MIN
+ val return
+ val >>=
+ val mzero
+ val mplus
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+ val pure
+ val <*>
+ val empty
+ val <|>
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val pure
+ val <*>
+ val fmap
+ val <$>
+ val curry
+ val many_v
+ val some_v
+ val many
+ val some
+ val optional
+ val guard
+ val msum
+ val mfilter
+}
+structure SMLMonadsState{
+ structure M => functor SMLMonadsStateT . structure M
+ structure Monad3 => functor MonadState3 . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => functor SMLMonadsStateT
+ type t => signature MONAD_STATE3_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ val run
+ val eval
+ val exec
+ val return
+ val >>=
+ val get
+ val put
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val modify
+ val gets
+ val run
+ val eval
+ val exec
+}
+structure Getting{
+ type t => functor Lens2
+ val lens
+ val at1
+ val view
+}
+structure Setting{
+ structure Lens2 => functor Lens . structure Lens2
+ type t => functor Lens2
+ type t => functor Lens
+ val lens
+ val at1
+ val set
+}
+signature BOTTOM{
+ type t
+}
+signature FUNCTOR_MIN{
+ type t
+ val fmap
+}
+signature FUNCTOR{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+signature FUNCTOR2_MIN{
+ type t
+ val fmap
+}
+signature FUNCTOR2{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+signature FUNCTOR3_MIN{
+ type t
+ val fmap
+}
+signature FUNCTOR3{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+signature APPLICATIVE_MIN{
+ type t
+ val pure
+ val <*>
+}
+signature APPLICATIVE{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+}
+signature APPLICATIVE2_MIN{
+ type t
+ val pure
+ val <*>
+}
+signature APPLICATIVE2{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+}
+signature APPLICATIVE3_MIN{
+ type t
+ val pure
+ val <*>
+}
+signature APPLICATIVE3{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+}
+signature ALTERNATIVE_MIN{
+ type t
+ val pure
+ val <*>
+ val empty
+ val <|>
+}
+signature ALTERNATIVE{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val empty
+ val <|>
+ val some
+ val many
+ val optional
+}
+signature MONAD_MIN{
+ type t
+ val return
+ val >>=
+}
+signature MONAD{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+}
+signature MONAD2_MIN{
+ type t
+ val return
+ val >>=
+}
+signature MONAD2{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+}
+signature MONAD3_MIN{
+ type t
+ val return
+ val >>=
+}
+signature MONAD3{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+}
+signature MONAD_PLUS_MIN{
+ type t
+ val return
+ val >>=
+ val mzero
+ val mplus
+}
+signature MONAD_PLUS{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val empty
+ val <|>
+ val some
+ val many
+ val optional
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val mzero
+ val mplus
+ val msum
+ val mfilter
+ val guard
+}
+signature MONAD_STATE_MIN{
+ type t
+ val return
+ val >>=
+ val get
+ val put
+}
+signature MONAD_STATE{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val get
+ val put
+ val modify
+ val gets
+}
+signature MONAD_STATE3_MIN{
+ type t
+ val return
+ val >>=
+ val get
+ val put
+}
+signature MONAD_STATE3{
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val get
+ val put
+ val modify
+ val gets
+}
+signature SML_MONADS_IO{
+ type t => signature MONAD2
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val make
+ val unsafePerformIO
+ val lift1
+ val lift2
+ val lift3
+ val lift4
+ val lift5
+}
+signature SML_MONADS_IOREF{
+ type t
+ val make
+ val read
+ val write
+ val modify
+}
+signature SML_MONADS_IDENTITY{
+ type t => signature MONAD
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val make
+ val run
+}
+signature SML_MONADS_CONST{
+ type t => signature FUNCTOR2
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val make
+ val run
+}
+signature SML_MONADS_OPTION{
+ type t => signature MONAD_PLUS
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val empty
+ val <|>
+ val some
+ val many
+ val optional
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val mzero
+ val mplus
+ val msum
+ val mfilter
+ val guard
+}
+signature SML_MONADS_STATE_T{
+ structure M{
+  type t => signature MONAD
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val pure
+  val <*>
+  val <**>
+  val *>
+  val <*
+  val liftA
+  val liftA2
+  val liftA3
+  val return
+  val >>=
+  val >>
+  val mapM
+  val mapM_
+  val forM
+  val forM_
+  val sequence
+  val sequence_
+  val =<<
+  val >=>
+  val <=<
+  val join
+  val filterM
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+ }
+ type t => signature MONAD_STATE3
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val get
+ val put
+ val modify
+ val gets
+ val run
+ val eval
+ val exec
+}
+signature SML_MONADS_STATE{
+ type t => signature MONAD_STATE3
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+ val return
+ val >>=
+ val >>
+ val mapM
+ val mapM_
+ val forM
+ val forM_
+ val sequence
+ val sequence_
+ val =<<
+ val >=>
+ val <=<
+ val join
+ val filterM
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val get
+ val put
+ val modify
+ val gets
+ val run
+ val eval
+ val exec
+}
+signature GETTING{
+ type t
+ val at1
+ val view
+}
+signature SETTING{
+ type t
+ val at1
+ val set
+}
+functor Functor3{
+ type t => signature FUNCTOR3_MIN
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+functor Functor2{
+ structure Functor3{
+  type t => signature FUNCTOR3_MIN
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+ }
+ type t => signature FUNCTOR3_MIN
+ type t => signature FUNCTOR2_MIN
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val fmap
+}
+functor Functor{
+ structure Functor3{
+  type t => signature FUNCTOR3_MIN
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+ }
+ type t => signature FUNCTOR3_MIN
+ type t => signature FUNCTOR_MIN
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val fmap
+}
+functor Functor3ToFunctor2{
+ type t => signature FUNCTOR3
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+functor Functor3ToFunctor{
+ type t => signature FUNCTOR3
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+functor FunctorToFunctor2{
+ type t => signature FUNCTOR
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+functor FunctorToFunctor3{
+ type t => signature FUNCTOR
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+}
+functor Applicative3{
+ structure Functor3Min{
+  type t
+  val fmap
+ }
+ structure Functor3{
+  type t => signature FUNCTOR3_MIN
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+ }
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+}
+functor Applicative2{
+ structure Applicative3{
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature APPLICATIVE2_MIN
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val pure
+ val <*>
+}
+functor Applicative{
+ structure Applicative3{
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature APPLICATIVE_MIN
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val pure
+ val <*>
+}
+functor Applicative3ToApplicative2{
+ type t => signature APPLICATIVE3
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+}
+functor Applicative3ToApplicative{
+ type t => signature APPLICATIVE3
+ type t
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val pure
+ val <*>
+ val <**>
+ val *>
+ val <*
+ val liftA
+ val liftA2
+ val liftA3
+}
+functor Alternative{
+ structure Applicative{
+  structure Applicative3 => functor Applicative . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  type t => signature APPLICATIVE_MIN
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+  val pure
+  val <*>
+ }
+ structure Applicative3 => functor Applicative . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature ALTERNATIVE_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature APPLICATIVE_MIN
+ val pure
+ val <*>
+ val empty
+ val <|>
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val pure
+ val <*>
+ val fmap
+ val <$>
+ val curry
+ val many_v
+ val some_v
+ val many
+ val some
+ val optional
+}
+functor Monad3{
+ structure Applicative3{
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+}
+functor Monad2{
+ structure Monad3{
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD2_MIN
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+}
+functor Monad{
+ structure Monad3{
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD_MIN
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+}
+functor MonadPlus{
+ structure Monad{
+  structure Monad3 => functor Monad . structure Monad3
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  type t => signature MONAD_MIN
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+  val return
+  val >>=
+ }
+ structure Monad3 => functor Monad . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ structure Alternative{
+  structure Applicative => functor Alternative . structure Applicative
+  structure Applicative3 => functor Applicative . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature ALTERNATIVE_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  type t => signature APPLICATIVE_MIN
+  val pure
+  val <*>
+  val empty
+  val <|>
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+  val pure
+  val <*>
+  val fmap
+  val <$>
+  val curry
+  val many_v
+  val some_v
+  val many
+  val some
+  val optional
+ }
+ structure Applicative => functor Alternative . structure Applicative
+ structure Applicative3 => functor Applicative . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD_PLUS_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD_MIN
+ type t => signature ALTERNATIVE_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature APPLICATIVE_MIN
+ val return
+ val >>=
+ val mzero
+ val mplus
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+ val pure
+ val <*>
+ val empty
+ val <|>
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val pure
+ val <*>
+ val fmap
+ val <$>
+ val curry
+ val many_v
+ val some_v
+ val many
+ val some
+ val optional
+ val guard
+ val msum
+ val mfilter
+}
+functor MonadState{
+ structure Monad2{
+  structure Monad3 => functor Monad2 . structure Monad3
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  type t => signature MONAD2_MIN
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+  val return
+  val >>=
+ }
+ structure Monad3 => functor Monad2 . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD_STATE_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ type t => signature MONAD2_MIN
+ val return
+ val >>=
+ val get
+ val put
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val return
+ val >>=
+ val modify
+ val gets
+}
+functor MonadState3{
+ structure Monad3{
+  structure Applicative3 => functor Monad3 . structure Applicative3
+  structure Functor3Min => functor Applicative3 . structure Functor3Min
+  structure Functor3 => functor Applicative3 . structure Functor3
+  type t => signature MONAD3_MIN
+  type t => signature APPLICATIVE3_MIN
+  type t => signature FUNCTOR3_MIN
+  val return
+  val >>=
+  val >>
+  val =<<
+  val >=>
+  val <=<
+  val sequence
+  val sequence_
+  val mapM
+  val mapM_
+  val filterM
+  val forM
+  val forM_
+  val join
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+  val pure
+  val <*>
+  val fmap
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val curry
+  val curry3
+  val liftA
+  val liftA2
+  val liftA3
+  val <**>
+  val *>
+  val <*
+ }
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t => signature MONAD_STATE3_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ val return
+ val >>=
+ val get
+ val put
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val modify
+ val gets
+}
+functor SMLMonadsStateT{
+ structure M{
+  type t => signature MONAD
+  val fmap
+  val <$>
+  val <$
+  val $>
+  val void
+  val pure
+  val <*>
+  val <**>
+  val *>
+  val <*
+  val liftA
+  val liftA2
+  val liftA3
+  val return
+  val >>=
+  val >>
+  val mapM
+  val mapM_
+  val forM
+  val forM_
+  val sequence
+  val sequence_
+  val =<<
+  val >=>
+  val <=<
+  val join
+  val filterM
+  val mapAndUnzipM
+  val zipWithM
+  val zipWithM_
+  val foldM
+  val foldM_
+  val replicateM
+  val replicateM_
+  val when
+  val unless
+  val liftM
+  val liftM2
+  val liftM3
+  val liftM4
+  val liftM5
+  val ap
+ }
+ structure Monad3 => functor MonadState3 . structure Monad3
+ structure Applicative3 => functor Monad3 . structure Applicative3
+ structure Functor3Min => functor Applicative3 . structure Functor3Min
+ structure Functor3 => functor Applicative3 . structure Functor3
+ type t
+ type t => signature MONAD_STATE3_MIN
+ type t => signature MONAD3_MIN
+ type t => signature APPLICATIVE3_MIN
+ type t => signature FUNCTOR3_MIN
+ val run
+ val eval
+ val exec
+ val return
+ val >>=
+ val get
+ val put
+ val return
+ val >>=
+ val >>
+ val =<<
+ val >=>
+ val <=<
+ val sequence
+ val sequence_
+ val mapM
+ val mapM_
+ val filterM
+ val forM
+ val forM_
+ val join
+ val mapAndUnzipM
+ val zipWithM
+ val zipWithM_
+ val foldM
+ val foldM_
+ val replicateM
+ val replicateM_
+ val when
+ val unless
+ val liftM
+ val liftM2
+ val liftM3
+ val liftM4
+ val liftM5
+ val ap
+ val pure
+ val <*>
+ val fmap
+ val fmap
+ val <$>
+ val <$
+ val $>
+ val void
+ val curry
+ val curry3
+ val liftA
+ val liftA2
+ val liftA3
+ val <**>
+ val *>
+ val <*
+ val modify
+ val gets
+}
+functor Lens2{
+ type t
+ val lens
+ val at1
+}
+functor Lens{
+ structure Lens2{
+  type t => functor Lens2
+  val lens
+  val at1
+ }
+ type t => functor Lens2
+ type t
+ val lens
+ val at1
+}
