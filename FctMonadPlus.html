@@ -26,9 +26,6 @@ struct<br>
 &nbsp;&nbsp;open&nbsp;MonadPlusMin<br>
 &nbsp;&nbsp;open&nbsp;<A HREF="FctMonadPlus-StrMonad.html">Monad</A><br>
 &nbsp;&nbsp;open&nbsp;<A HREF="FctMonadPlus-StrAlternative.html">Alternative</A><br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctMonadPlus-StrMonad.html">Monad</A>&nbsp;=&nbsp;<A HREF="FctMonad.html">Monad</A>(struct&nbsp;type&nbsp;'a&nbsp;t&nbsp;=&nbsp;'a&nbsp;<A HREF="SigMONAD_PLUS_MIN.html#Typet">t</A>&nbsp;val&nbsp;return&nbsp;val&nbsp;>>=&nbsp;end)<br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctMonadPlus-StrAlternative.html">Alternative</A>&nbsp;=<br>
-&nbsp;&nbsp;<A HREF="FctAlternative.html">Alternative</A>(struct&nbsp;type&nbsp;'a&nbsp;t&nbsp;=&nbsp;'a&nbsp;<A HREF="SigMONAD_MIN.html#Typet">t</A>&nbsp;val&nbsp;pure&nbsp;val&nbsp;<*>&nbsp;val&nbsp;empty&nbsp;val&nbsp;<|>&nbsp;end)<br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctMonadPlus.html#Valguard">guard</A>&nbsp;:&nbsp;bool&nbsp;-&gt;&nbsp;unit&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctMonadPlus.html#Valmsum">msum</A>&nbsp;:&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;list&nbsp;-&gt;&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctMonadPlus.html#Valmfilter">mfilter</A>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;bool)&nbsp;*&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>

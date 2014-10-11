@@ -22,18 +22,7 @@
 <CODE>functor&nbsp;<A HREF="FctApplicative2.html">Applicative2</A>(Applicative2Min&nbsp;:&nbsp;<A HREF="SigAPPLICATIVE2_MIN.html">APPLICATIVE2_MIN</A>)&nbsp;:>&nbsp;<A HREF="SigAPPLICATIVE2.html">APPLICATIVE2</A><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;type&nbsp;('z,&nbsp;'a)&nbsp;&nbsp;t&nbsp;=<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('z,&nbsp;'a)&nbsp;<A HREF="SigAPPLICATIVE2_MIN.html#Typet">Applicative2Min.t</A>&nbsp;=<br>
-struct<br>
-&nbsp;&nbsp;open&nbsp;<A HREF="FctApplicative2-StrApplicative3.html">Applicative3</A><br>
-&nbsp;&nbsp;open&nbsp;Applicative2Min<br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctApplicative2-StrApplicative3.html">Applicative3</A>&nbsp;=<br>
-&nbsp;&nbsp;<A HREF="FctApplicative3.html">Applicative3</A>(<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;t&nbsp;=&nbsp;('z,&nbsp;'a)&nbsp;<A HREF="SigAPPLICATIVE2_MIN.html#Typet">Applicative2Min.t</A><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;pure<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;<*><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
-end</CODE>
+struct&nbsp;open&nbsp;<A HREF="FctApplicative2-StrApplicative3.html">Applicative3</A>&nbsp;open&nbsp;Applicative2Min&nbsp;end</CODE>
 <P>
 
 

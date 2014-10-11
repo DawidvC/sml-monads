@@ -22,16 +22,7 @@
 <CODE>functor&nbsp;<A HREF="FctMonad2.html">Monad2</A>(Monad2Min&nbsp;:&nbsp;<A HREF="SigMONAD2_MIN.html">MONAD2_MIN</A>)&nbsp;:>&nbsp;<A HREF="SigMONAD2.html">MONAD2</A><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where&nbsp;type&nbsp;('z,&nbsp;'a)&nbsp;&nbsp;t&nbsp;=<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('z,&nbsp;'a)&nbsp;<A HREF="SigMONAD2_MIN.html#Typet">Monad2Min.t</A>&nbsp;=<br>
-struct<br>
-&nbsp;&nbsp;open&nbsp;<A HREF="FctMonad2-StrMonad3.html">Monad3</A><br>
-&nbsp;&nbsp;open&nbsp;Monad2Min<br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctMonad2-StrMonad3.html">Monad3</A>&nbsp;=<br>
-&nbsp;&nbsp;<A HREF="FctMonad3.html">Monad3</A>(<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;struct<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;t&nbsp;=&nbsp;('z,&nbsp;'a)&nbsp;<A HREF="SigMONAD2_MIN.html#Typet">Monad2Min.t</A>&nbsp;val&nbsp;return&nbsp;val&nbsp;>>=<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
-end</CODE>
+struct&nbsp;open&nbsp;<A HREF="FctMonad2-StrMonad3.html">Monad3</A>&nbsp;open&nbsp;Monad2Min&nbsp;end</CODE>
 <P>
 
 

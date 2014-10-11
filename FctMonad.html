@@ -20,12 +20,7 @@
 <HR>
 <P>
 <CODE>functor&nbsp;<A HREF="FctMonad.html">Monad</A>(MonadMin&nbsp;:&nbsp;<A HREF="SigMONAD_MIN.html">MONAD_MIN</A>)&nbsp;:>&nbsp;<A HREF="SigMONAD.html">MONAD</A>&nbsp;where&nbsp;type&nbsp;'a&nbsp;&nbsp;t&nbsp;=&nbsp;'a&nbsp;<A HREF="SigMONAD_MIN.html#Typet">MonadMin.t</A>&nbsp;=<br>
-struct<br>
-&nbsp;&nbsp;open&nbsp;<A HREF="FctMonad-StrMonad3.html">Monad3</A><br>
-&nbsp;&nbsp;open&nbsp;MonadMin<br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctMonad-StrMonad3.html">Monad3</A>&nbsp;=<br>
-&nbsp;&nbsp;<A HREF="FctMonad3.html">Monad3</A>(struct&nbsp;type&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;t&nbsp;=&nbsp;'a&nbsp;<A HREF="SigMONAD_MIN.html#Typet">MonadMin.t</A>&nbsp;val&nbsp;return&nbsp;val&nbsp;>>=&nbsp;end)<br>
-end</CODE>
+struct&nbsp;open&nbsp;<A HREF="FctMonad-StrMonad3.html">Monad3</A>&nbsp;open&nbsp;MonadMin&nbsp;end</CODE>
 <P>
 
 

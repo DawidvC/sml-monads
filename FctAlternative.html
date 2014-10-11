@@ -25,13 +25,8 @@
 struct<br>
 &nbsp;&nbsp;open&nbsp;AlternativeMin<br>
 &nbsp;&nbsp;open&nbsp;<A HREF="FctAlternative-StrApplicative.html">Applicative</A><br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctAlternative-StrApplicative.html">Applicative</A>&nbsp;=<br>
-&nbsp;&nbsp;<A HREF="FctApplicative.html">Applicative</A>(struct&nbsp;type&nbsp;'a&nbsp;t&nbsp;=&nbsp;'a&nbsp;<A HREF="SigALTERNATIVE_MIN.html#Typet">t</A>&nbsp;val&nbsp;pure&nbsp;val&nbsp;<*>&nbsp;end)<br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valfmap">fmap</A>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;*&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'b&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Val<$>"><$></A>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;*&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'b&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
-&nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valcurry">curry</A><br>
-&nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valmany_v">many_v</A><br>
-&nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valsome_v">some_v</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valmany">many</A>&nbsp;:&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'a&nbsp;list&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valsome">some</A>&nbsp;:&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'a&nbsp;list&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctAlternative.html#Valoptional">optional</A>&nbsp;:&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'a&nbsp;option&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A><br>
@@ -61,24 +56,6 @@ end</CODE>
 <H3><$></H3>
 <P>
 <CODE>val&nbsp;<$>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;*&nbsp;'a&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;'b&nbsp;<A HREF="SigAPPLICATIVE_MIN.html#Typet">t</A></CODE>
-
-<HR>
-<A NAME="Valcurry"><!-- --></A>
-<H3>curry</H3>
-<P>
-<CODE>val&nbsp;curry</CODE>
-
-<HR>
-<A NAME="Valmany_v"><!-- --></A>
-<H3>many_v</H3>
-<P>
-<CODE>val&nbsp;many_v</CODE>
-
-<HR>
-<A NAME="Valsome_v"><!-- --></A>
-<H3>some_v</H3>
-<P>
-<CODE>val&nbsp;some_v</CODE>
 
 <HR>
 <A NAME="Valmany"><!-- --></A>

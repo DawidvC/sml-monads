@@ -25,12 +25,7 @@
 struct<br>
 &nbsp;&nbsp;open&nbsp;Applicative3Min<br>
 &nbsp;&nbsp;open&nbsp;<A HREF="FctApplicative3-StrFunctor3.html">Functor3</A><br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctApplicative3-StrFunctor3Min.html">Functor3Min</A>&nbsp;=<br>
-&nbsp;&nbsp;struct&nbsp;type&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="FctApplicative3-StrFunctor3Min.html#Typet">t</A>&nbsp;=&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="SigAPPLICATIVE3_MIN.html#Typet">t</A>&nbsp;val&nbsp;<A HREF="FctApplicative3-StrFunctor3Min.html#Valfmap">fmap</A>&nbsp;end<br>
-&nbsp;&nbsp;structure&nbsp;<A HREF="FctApplicative3-StrFunctor3.html">Functor3</A>&nbsp;=&nbsp;<A HREF="FctFunctor3.html">Functor3</A>(<A HREF="FctApplicative3-StrFunctor3Min.html">Functor3Min</A>)<br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctApplicative3.html#Valfmap">fmap</A>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;*&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="SigAPPLICATIVE3_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'b)&nbsp;<A HREF="SigAPPLICATIVE3_MIN.html#Typet">t</A><br>
-&nbsp;&nbsp;val&nbsp;<A HREF="FctApplicative3.html#Valcurry">curry</A><br>
-&nbsp;&nbsp;val&nbsp;<A HREF="FctApplicative3.html#Valcurry3">curry3</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctApplicative3.html#ValliftA">liftA</A>&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="SigFUNCTOR3_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'b)&nbsp;<A HREF="SigFUNCTOR3_MIN.html#Typet">t</A><br>
 &nbsp;&nbsp;val&nbsp;<A HREF="FctApplicative3.html#ValliftA2">liftA2</A><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;('a&nbsp;*&nbsp;'b&nbsp;-&gt;&nbsp;'c)&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="SigFUNCTOR3_MIN.html#Typet">t</A>&nbsp;*&nbsp;('y,&nbsp;'z,&nbsp;'b)&nbsp;<A HREF="SigFUNCTOR3_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'c)&nbsp;<A HREF="SigFUNCTOR3_MIN.html#Typet">t</A><br>
@@ -60,18 +55,6 @@ end</CODE>
 <H3>fmap</H3>
 <P>
 <CODE>val&nbsp;fmap&nbsp;:&nbsp;('a&nbsp;-&gt;&nbsp;'b)&nbsp;*&nbsp;('y,&nbsp;'z,&nbsp;'a)&nbsp;<A HREF="SigAPPLICATIVE3_MIN.html#Typet">t</A>&nbsp;-&gt;&nbsp;('y,&nbsp;'z,&nbsp;'b)&nbsp;<A HREF="SigAPPLICATIVE3_MIN.html#Typet">t</A></CODE>
-
-<HR>
-<A NAME="Valcurry"><!-- --></A>
-<H3>curry</H3>
-<P>
-<CODE>val&nbsp;curry</CODE>
-
-<HR>
-<A NAME="Valcurry3"><!-- --></A>
-<H3>curry3</H3>
-<P>
-<CODE>val&nbsp;curry3</CODE>
 
 <HR>
 <A NAME="ValliftA"><!-- --></A>
