@@ -22,6 +22,7 @@ type 'a t = unit -> 'a option Monad.t
 structure M = Monad
 structure O = SMLMonadsOption
 fun run m = m ()
+fun lift m () = M.fmap(SOME, m)
 fun return x () = M.return(SOME x)
 fun >>=(m, f) () = M.>>=(m(), fn SOME x => f x ()
                        | NONE => M.return NONE)

@@ -5,6 +5,7 @@ functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE_T
        = 's * ('a * 's -> 'r Monad.t) -> 'r Monad.t
   structure M = Monad
   fun run m s = m(s, fn x => Monad.return x)
+  fun lift m (s, cont) = M.>>=(m, fn x => cont(x, s))
   fun eval m s = m(s, fn (a, s') => Monad.return a)
   fun exec m s = m(s, fn (a, s') => Monad.return s')
 
