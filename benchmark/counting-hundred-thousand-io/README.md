@@ -23,6 +23,17 @@ user	0m0.003s
 sys	0m0.002s
 ```
 
+### MLKit
+
+```
+$ mlkit main.mlb
+$ time ./run
+100000
+real	0m0.013s
+user	0m0.013s
+sys	0m0.001s
+```
+
 ### GHC
 
 GHC との比較。
@@ -37,5 +48,5 @@ sys	0m0.003s
 
 ### 結果
 
-MLton がもっとも高速で、次点に GHC 、
+MLton がもっとも高速で、次点に MLKit と GHC がほぼ等しく、
 最後に SML/NJ となる結果になりました。

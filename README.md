@@ -14,6 +14,7 @@ SML '97 をサポートするコンパイラならどれでも動作するはず
 
 * SML/NJ
 * MLton
+* MLKit
 * SMLtoJs
 
 ### Status
