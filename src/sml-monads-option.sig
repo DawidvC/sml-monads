@@ -5,4 +5,4 @@ signature SML_MONADS_OPTION_T = sig
   val lift : 'a M.t -> 'a t
 end
 
-signature SML_MONADS_OPTION = MONAD_PLUS where 'a t = 'a option
+signature SML_MONADS_OPTION = MONAD_PLUS where type 'a t = 'a option

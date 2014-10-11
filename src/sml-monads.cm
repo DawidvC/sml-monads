@@ -34,6 +34,7 @@ Library
   signature SML_MONADS_CONST
   signature SML_MONADS_OPTION_T
   signature SML_MONADS_OPTION
+  signature SML_MONADS_LIST
   signature SML_MONADS_STATE_T
   signature SML_MONADS_STATE
   functor Functor
@@ -58,6 +59,7 @@ Library
   structure SMLMonadsConst
   functor SMLMonadsOptionT
   structure SMLMonadsOption
+  structure SMLMonadsList
   functor SMLMonadsStateT
   structure SMLMonadsState
   structure Getting
@@ -88,6 +90,8 @@ is
   sml-monads-const.sml
   sml-monads-option.sig
   sml-monads-option.sml
+  sml-monads-list.sig
+  sml-monads-list.sml
   sml-monads-state.sig
   sml-monads-state.sml
   lens.sig
