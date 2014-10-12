@@ -15,3 +15,11 @@ structure SMLMonadsEither :> SML_MONADS_EITHER = struct
 
   open M
 end
+
+functor SMLMonadsEither1(type left_t) :> MONAD where type 'a t = (left_t, 'a) Either.either = struct
+
+  open Either
+  open SMLMonadsEither
+
+  type 'a t = (left_t, 'a) either
+end

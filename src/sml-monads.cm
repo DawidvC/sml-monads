@@ -62,6 +62,7 @@ Library
   structure SMLMonadsOption
   structure Either
   structure SMLMonadsEither
+  functor SMLMonadsEither1
   structure SMLMonadsList
   functor SMLMonadsStateT
   structure SMLMonadsState
