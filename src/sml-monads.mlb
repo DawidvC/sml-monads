@@ -25,6 +25,9 @@ in
   sml-monads-const.sml
   sml-monads-option.sig
   sml-monads-option.sml
+  either.sml
+  sml-monads-either.sig
+  sml-monads-either.sml
   sml-monads-list.sig
   sml-monads-list.sml
   sml-monads-state.sig
