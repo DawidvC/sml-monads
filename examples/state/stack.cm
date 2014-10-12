@@ -1,0 +1,6 @@
+Library
+  structure Example
+is
+  $/basis.cm
+  ../../src/sml-monads.cm
+  stack.sml
