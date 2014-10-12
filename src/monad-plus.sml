@@ -20,9 +20,9 @@ functor MonadPlus(MonadPlusMin : MONAD_PLUS_MIN)
   infix 1 >>=
 
   fun guard true = return ()
-    | guard false = mzero
+    | guard false = mzero ()
 
-  fun msum xs = foldr mplus mzero xs
+  fun msum xs = foldr mplus (mzero()) xs
 
-  fun mfilter (p, m) = m >>= (fn x => if p x then return x else mzero)
+  fun mfilter (p, m) = m >>= (fn x => if p x then return x else mzero())
 end

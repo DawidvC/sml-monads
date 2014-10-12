@@ -4,7 +4,7 @@ structure Origin = struct
 type 'a t = 'a list
 fun return x = [x]
 fun >>=(xs, f) = List.concat(List.map f xs)
-val mzero = nil
+fun mzero () = nil
 fun mplus(xs, ys) = List.concat [xs, ys]
 end
 
