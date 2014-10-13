@@ -36,4 +36,5 @@ in
   sml-monads-state.sml
   lens.sig
   lens.sml
+  sml-monads-sum.sml
 end

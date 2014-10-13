@@ -70,6 +70,7 @@ Library
   structure SMLMonadsState
   structure Getting
   structure Setting
+  structure SMLMonadsSum
 is
   $/basis.cm
   bottom.sig
@@ -107,3 +108,4 @@ is
   sml-monads-state.sml
   lens.sig
   lens.sml
+  sml-monads-sum.sml
