@@ -71,6 +71,7 @@ Library
   structure Getting
   structure Setting
   structure SMLMonadsSum
+  structure SMLMonadsProduct
 is
   $/basis.cm
   bottom.sig
@@ -109,3 +110,4 @@ is
   lens.sig
   lens.sml
   sml-monads-sum.sml
+  sml-monads-product.sml

@@ -37,4 +37,5 @@ in
   lens.sig
   lens.sml
   sml-monads-sum.sml
+  sml-monads-product.sml
 end
