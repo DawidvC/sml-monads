@@ -26,6 +26,7 @@ Library
   signature MONAD_STATE3_MIN
   signature MONAD_STATE
   signature MONAD_STATE3
+  signature MONOID
   signature GETTING
   signature SETTING
   signature SML_MONADS_IO
@@ -51,6 +52,7 @@ Library
   functor MonadPlus
   functor MonadState
   functor MonadState3
+  functor Monoid
   functor Lens
   functor Lens2
   structure Bottom
@@ -84,6 +86,8 @@ is
   monad-plus.sml
   monad-state.sig
   monad-state.sml
+  monoid.sig
+  monoid.sml
   sml-monads-io.sig
   sml-monads-io.sml
   sml-monads-ioref.sig
