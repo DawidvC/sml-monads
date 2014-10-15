@@ -1,3 +1,8 @@
 functor Foldable(FoldableMin : FOLDABLE_MIN) : FOLDABLE = struct
   open FoldableMin
+
+  fun foldl f x xs =
+      let fun id x = x
+          fun f' (x, k) z = k (f(x, z))
+      in foldr f' id xs x end
 end
