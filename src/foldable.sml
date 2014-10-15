@@ -7,4 +7,5 @@ functor Foldable(FoldableMin : FOLDABLE_MIN) : FOLDABLE = struct
       in foldr f' id xs x end
 
   fun toList t = foldr (op ::) nil t
+  fun concat ts = foldr (op @) nil ts
 end
