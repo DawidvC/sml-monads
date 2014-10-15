@@ -17,6 +17,8 @@ in
   monad-state.sml
   monoid.sig
   monoid.sml
+  foldable.sig
+  foldable.sml
   sml-monads-io.sig
   sml-monads-io.sml
   sml-monads-ioref.sig

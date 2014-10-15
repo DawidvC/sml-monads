@@ -27,6 +27,8 @@ Library
   signature MONAD_STATE
   signature MONAD_STATE3
   signature MONOID
+  signature FOLDABLE_MIN
+  signature FOLDABLE
   signature GETTING
   signature SETTING
   signature SML_MONADS_IO
@@ -53,6 +55,7 @@ Library
   functor MonadState
   functor MonadState3
   functor Monoid
+  functor Foldable
   functor Lens
   functor Lens2
   structure Bottom
@@ -90,6 +93,8 @@ is
   monad-state.sml
   monoid.sig
   monoid.sml
+  foldable.sig
+  foldable.sml
   sml-monads-io.sig
   sml-monads-io.sml
   sml-monads-ioref.sig
