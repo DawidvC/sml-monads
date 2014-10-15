@@ -5,4 +5,6 @@ functor Foldable(FoldableMin : FOLDABLE_MIN) : FOLDABLE = struct
       let fun id x = x
           fun f' (x, k) z = k (f(x, z))
       in foldr f' id xs x end
+
+  fun toList t = foldr (op ::) nil t
 end
