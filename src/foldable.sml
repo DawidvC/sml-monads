@@ -8,6 +8,7 @@ functor Foldable(FoldableMin : FOLDABLE_MIN) : FOLDABLE = struct
 
   fun toList t = foldr (op ::) nil t
   fun concat ts = foldr (op @) nil ts
+  fun concatMap f = foldr (fn (a,b) => f a @ b) nil
   fun exists p = foldr (fn (a,b) => p a orelse b) false
   fun all p = foldr (fn (a,b) => p a andalso b) true
 end
