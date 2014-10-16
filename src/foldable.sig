@@ -14,4 +14,6 @@ signature FOLDABLE = sig
   val concatMap : ('a -> 'b list) -> 'a t -> 'b list
   val exists : ('a -> bool) -> 'a t -> bool
   val all : ('a -> bool) -> 'a t -> bool
+  val maximumBy : ('a * 'a -> order) -> 'a t -> 'a option
+  val minimumBy : ('a * 'a -> order) -> 'a t -> 'a option
 end
