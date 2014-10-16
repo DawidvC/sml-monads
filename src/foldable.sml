@@ -12,8 +12,8 @@ functor Foldable(FoldableMin : FOLDABLE_MIN) : FOLDABLE = struct
   fun toList t = foldr (op ::) nil t
   fun concat ts = foldr (op @) nil ts
   fun concatMap f = foldr (fn (a,b) => f a @ b) nil
-  fun exists p = foldr (fn (a,b) => p a orelse b) false
-  fun all p = foldr (fn (a,b) => p a andalso b) true
+  fun exists p = foldr (fn (a,b) => if b then b else p a) false
+  fun all p = foldr (fn (a,b) => if b then p a else b) true
   fun maximumBy compare = foldr1 (fn (a,b) => case compare(a,b) of
                                                   GREATER => a
                                                 | EQUAL => b
