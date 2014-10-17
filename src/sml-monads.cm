@@ -39,7 +39,8 @@ Library
   signature SML_MONADS_OPTION_T
   signature SML_MONADS_OPTION
   signature SML_MONADS_EITHER
-  signature SML_MONADS_LIST
+  signature SML_MONADS_LIST_MONAD
+  signature SML_MONADS_LIST_FOLDABLE
   signature SML_MONADS_STATE_T
   signature SML_MONADS_STATE
   functor Functor
