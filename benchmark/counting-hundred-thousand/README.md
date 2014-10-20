@@ -8,9 +8,10 @@ State モナドを使用して、単に10万回繰り返すだけのプログラ
 ```
 $ ml-build main.cm Main.main
 $ time sml @SMLload main
-real	0m0.042s
-user	0m0.017s
-sys	0m0.007
+100000
+real	0m0.044s
+user	0m0.026s
+sys	0m0.022s
 ```
 
 ### MLton
@@ -18,9 +19,10 @@ sys	0m0.007
 ```
 $ mlton main.mlb
 $ time ./main
-real	0m0.006s
-user	0m0.003s
-sys	0m0.002s
+100000
+real	0m0.007s
+user	0m0.004s
+sys	0m0.004s
 ```
 
 ### MLKit
@@ -28,9 +30,10 @@ sys	0m0.002s
 ```
 $ mlkit main.mlb
 $ time ./run
-real	0m0.017s
-user	0m0.011s
-sys	0m0.005s
+100000
+real	0m0.014s
+user	0m0.004s
+sys	0m0.010s
 ```
 
 ### GHC
@@ -40,9 +43,9 @@ GHC との比較。
 ```
 $ ghc -O3 Main.hs
 $ time ./Main 
-real	0m0.014s
-user	0m0.010s
-sys	0m0.003
+real   0m0.014s
+user   0m0.010s
+sys    0m0.003
 ```
 
 ### 結果
