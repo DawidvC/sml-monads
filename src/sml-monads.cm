@@ -41,8 +41,8 @@ Library
   signature SML_MONADS_EITHER
   signature SML_MONADS_LIST_MONAD
   signature SML_MONADS_LIST_FOLDABLE
-  signature SML_MONADS_STATE_T
-  signature SML_MONADS_STATE
+  signature SML_MONADS_STATE_CPS_T
+  signature SML_MONADS_STATE_CPS
   functor Functor
   functor Functor2
   functor Functor3
@@ -71,8 +71,8 @@ Library
   structure SMLMonadsEither
   functor SMLMonadsEither1
   structure SMLMonadsList
-  functor SMLMonadsStateT
-  structure SMLMonadsState
+  functor SMLMonadsStateCPST
+  structure SMLMonadsStateCPS
   structure Getting
   structure Setting
   structure SMLMonadsSum
@@ -112,8 +112,8 @@ is
   sml-monads-either.sml
   sml-monads-list.sig
   sml-monads-list.sml
-  sml-monads-state.sig
-  sml-monads-state.sml
+  sml-monads-state-cps.sig
+  sml-monads-state-cps.sml
   lens.sig
   lens.sml
   sml-monads-sum.sml

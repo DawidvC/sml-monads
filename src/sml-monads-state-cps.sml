@@ -1,4 +1,4 @@
-functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE_T
+functor SMLMonadsStateCPST(Monad : MONAD) :> SML_MONADS_STATE_CPS_T
                                               where type 'a M.t = 'a Monad.t
 = struct
   type ('r, 's, 'a) t
@@ -23,8 +23,8 @@ functor SMLMonadsStateT(Monad : MONAD) :> SML_MONADS_STATE_T
   end
 end
 
-structure SMLMonadsState :> SML_MONADS_STATE =
-let structure T = SMLMonadsStateT(SMLMonadsIdentity)
+structure SMLMonadsStateCPS :> SML_MONADS_STATE_CPS =
+let structure T = SMLMonadsStateCPST(SMLMonadsIdentity)
 in struct
   open T
   fun run m s = SMLMonadsIdentity.run (T.run m s)

@@ -1,4 +1,4 @@
-signature SML_MONADS_STATE_T = sig
+signature SML_MONADS_STATE_CPS_T = sig
   include MONAD_STATE3
   structure M : MONAD
   val run : ('a * 's, 's, 'a) t -> 's -> ('a * 's) M.t
@@ -7,7 +7,7 @@ signature SML_MONADS_STATE_T = sig
   val exec : ('s, 's, 'a) t -> 's -> 's M.t
 end
 
-signature SML_MONADS_STATE = sig
+signature SML_MONADS_STATE_CPS = sig
   include MONAD_STATE3
   val run : ('a * 's, 's, 'a) t -> 's -> ('a * 's)
   val eval : ('a, 's, 'a) t -> 's -> 'a

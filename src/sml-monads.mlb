@@ -34,8 +34,8 @@ in
   sml-monads-either.sml
   sml-monads-list.sig
   sml-monads-list.sml
-  sml-monads-state.sig
-  sml-monads-state.sml
+  sml-monads-state-cps.sig
+  sml-monads-state-cps.sml
   lens.sig
   lens.sml
   sml-monads-sum.sml
