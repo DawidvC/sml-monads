@@ -26,6 +26,8 @@ Library
   signature MONAD_STATE3_MIN
   signature MONAD_STATE
   signature MONAD_STATE3
+  signature SEMIGROUP
+  signature SEMIGROUP
   signature MONOID_MIN
   signature MONOID
   signature FOLDABLE_MIN
@@ -97,6 +99,8 @@ is
   monad-plus.sml
   monad-state.sig
   monad-state.sml
+  semigroup.sig
+  semigroup.sml
   monoid.sig
   monoid.sml
   foldable.sig
