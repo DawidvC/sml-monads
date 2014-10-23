@@ -6,6 +6,7 @@ end
 
 signature MONOID = sig
   type t
+  val <> : t * t -> t
   val mempty : t
   val mappend : t * t -> t
   val mconcat : t list -> t
