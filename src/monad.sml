@@ -1,5 +1,21 @@
 functor Monad3(Monad3Min : MONAD3_MIN)
         :> MONAD3 where type ('y, 'z, 'a) t = ('y, 'z, 'a) Monad3Min.t = struct
+
+  fun rev_loop([],a) = a
+    | rev_loop(x::xs,a) = rev_loop(xs, x::a)
+
+  fun rev(xs) = rev_loop(xs,[])
+
+  fun tabulate_loop(0,f,a) = rev a
+    | tabulate_loop(n,f,a) = tabulate_loop(n-1, f, f (n-1) :: a)
+
+  fun tabulate(n,f) = tabulate_loop(n,f,[])
+
+  fun foldl(f,x,[]) = x
+    | foldl(f,x,(y::ys)) = foldl(f,(f(y,x)),ys)
+
+  fun foldr f x xs = foldl(f,x,(rev xs))
+
   open Monad3Min
 
   infix 1 >>= >>
@@ -43,8 +59,8 @@ functor Monad3(Monad3Min : MONAD3_MIN)
 
   fun foldM_ (f, x, ys) = foldM(f, x, ys) >> return ()
 
-  fun replicateM (n, m) = sequence (List.tabulate (n, fn _ => m))
-  fun replicateM_ (n, m) = sequence_ (List.tabulate (n, fn _ => m))
+  fun replicateM (n, m) = sequence (tabulate (n, fn _ => m))
+  fun replicateM_ (n, m) = sequence_ (tabulate (n, fn _ => m))
 
   fun when (p, m) = if p then m else return ()
   fun unless (p, m) = if p then return () else m
